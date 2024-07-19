@@ -26,7 +26,7 @@ const client = new Client({
   }),
 });
 const app = express();
-const port = 3000;
+const port = 8080;
 app.get('/', (req, res) => {
   res.send('YaY Your Bot Status Changed✨');
 });
@@ -73,7 +73,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
 
   client.user.setPresence({
-    activities: [{ name: "Yönetim Merkezi", type: ActivityType.Custom}],
+    activities: [{ name: "Yönetim Merkezi", type: ActivityType.Watching}],
     status: 'dnd',
   });
 
